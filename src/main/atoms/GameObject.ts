@@ -12,7 +12,8 @@ export type TGameObjectFactoryObject = {
 
 /**
  *
- * TODO: [] Добавить событие MouseOver
+ * TODO: [] Добавить событие onMouseOver
+ * TODO: [] Добавить событие onClick
  *
  */
 

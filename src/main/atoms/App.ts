@@ -1,3 +1,11 @@
+
+/**
+ *
+ * [] TODO: Добавить DI контейнер
+ *    * Для возможности шарить какую либо логику межжду middlewares запускаемыми
+ *      движком.
+ *
+ * */
 export default class App {
 
   readonly canvas: HTMLCanvasElement;
