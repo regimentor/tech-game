@@ -12,6 +12,8 @@ export default class SceneObject extends GameObject {
       options.spriteMap,
       options.startSprite,
       options.startPosition,
+      options.onHover,
+      options.onClick,
       options.width,
       options.height
     );
@@ -25,8 +27,26 @@ export default class SceneObject extends GameObject {
 
   private rigidBody: RigidBody;
 
-  constructor(gameId, spriteMap, startSprite, startPosition, width, height) {
-    super(gameId, spriteMap, startSprite, startPosition, width, height);
+  constructor(
+    gameId,
+    spriteMap,
+    startSprite,
+    startPosition,
+    onHover,
+    onClick,
+    width,
+    height
+  ) {
+    super(
+      gameId,
+      spriteMap,
+      startSprite,
+      startPosition,
+      onHover,
+      onClick,
+      width,
+      height
+    );
   }
 
   public checkCollision(obj: SceneObject) {

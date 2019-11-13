@@ -7,15 +7,9 @@ export type TGameObjectFactoryObject = {
   startPosition: TPosition;
   width: number;
   height: number;
+  onHover?: () => void;
+  onClick?: () => void;
 };
-
-
-/**
- *
- * TODO: [] Добавить событие onMouseOver
- * TODO: [] Добавить событие onClick
- *
- */
 
 export default class GameObject {
   public position: TPosition;
@@ -26,6 +20,8 @@ export default class GameObject {
     private spriteMap: TSpriteMap,
     private currentSprite: string,
     private startPosition: TPosition,
+    private onHover: () => void = null,
+    private onClick: () => void = null,
     public width: number,
     public height: number
   ) {
@@ -47,10 +43,23 @@ export default class GameObject {
   }
 
   draw(context: CanvasRenderingContext2D) {
-    this.spriteMap[this.currentSprite].draw(
-      context,
-      this.position,
-      { width: this.width, height: this.height },
-    );
+    this.spriteMap[this.currentSprite].draw(context, this.position, {
+      width: this.width,
+      height: this.height
+    });
+  }
+
+  emmit(event) {
+    switch (event) {
+      case "hover":
+        if (this.onHover) this.onHover();
+        break;
+
+      case "click":
+        if (this.onClick) this.onClick();
+        break;
+      default:
+        break;
+    }
   }
 }

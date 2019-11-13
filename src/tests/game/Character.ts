@@ -1,5 +1,6 @@
 import SceneObject from "../../main/atoms/SceneObject";
 import Sprite from "../../main/atoms/Sprite";
+import { RigidBody } from "../../main/atoms/RigidBody";
 // @ts-ignore
 import mageAttacRightSprite from "../../assets/mage/attac-right.png";
 // @ts-ignore
@@ -12,7 +13,7 @@ import mageWalkLeftSprite from "../../assets/mage/walk-left.png";
 import mageRight from "../../assets/mage/mage-right.png";
 // @ts-ignore
 import mageLeft from "../../assets/mage/mage-left.png";
-import { RigidBody } from "../../main/atoms/RigidBody";
+
 
 const PlayerCharacter = SceneObject.create({
   width: 128,
@@ -97,7 +98,10 @@ const PlayerCharacter = SceneObject.create({
     offsetBottom: -20,
     offsetRight: -70,
     offsetLeft: -20
-  })
+  }),
+
+  onHover: () => {},
+  onClick: () => {}
 });
 
 let direction: "left" | "right" | "top" | "down" = "right";
@@ -123,7 +127,7 @@ window.addEventListener("keyup", event => {
 });
 
 window.addEventListener("keydown", event => {
-  console.log(event.keyCode);
+
   switch (event.keyCode) {
     // up
     case 38:

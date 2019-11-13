@@ -14,7 +14,10 @@ Land.debug = true;
 PlayerCharacter.debug = true;
 
 const collisions: IMiddleware = app => {
-  console.log(PlayerCharacter.checkCollision(Land));
+  // console.log(PlayerCharacter.checkCollision(Land));
 };
 
 const app = createApp({ root: "#root", middlewares: [m1, collisions] });
+
+app.registerGameObject(PlayerCharacter);
+app.registerGameObject(Land);
